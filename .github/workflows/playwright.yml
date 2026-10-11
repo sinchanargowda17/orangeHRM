@@ -24,8 +24,8 @@ jobs:
       run: npx playwright test --project=chromium 
       env:
         
-       USERNAME: sinchana
-       PASSWORD: Sinchu@123
+         USERNAME: ${{ secrets.USERNAME }}
+         PASSWORD: ${{ secrets.PASSWORD }}
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
