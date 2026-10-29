@@ -24,7 +24,7 @@ export default defineConfig({
 
   /* Opt out of parallel tests on CI. */
 
-  workers: process.env.CI ? 3 : 3,
+  workers: process.env.CI ? 3 : 3,    //fiest 3 is for the hit hud and second one is for local
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   // timeout:60000,
 
