@@ -18,18 +18,18 @@ test('verify add job catagories', async ({ page }) => {
     prices.forEach((price,index)=>{
         prices[index]=Number(price.replace('₹','').replaceAll(',',''));
     });
+    console.log("This is prices");
     console.log(prices);
-    prices.sort((a, b) => a - b);
-    console.log(prices);
+    const sorted_prices=prices.sort((a, b) => a - b);
+    console.log("This is sorted_prices prices");
+    console.log(sorted_prices);
 
-    if (prices.length > 0) {
-        for (let i = 0; i < prices.length - 1; i++) {
-            expect(prices[i]).toBeLessThanOrEqual(prices[i + 1]);
-        }
-        console.log("Price Low to High Verified Successfully");
-    } else {
-        console.log("No prices found to verify.");
-    }
+ if (prices.length > 0) {
+    expect(prices).toEqual(sorted_prices);
+    console.log("Price is verified successfully");
+} else {
+    console.log("No prices found to verify.");
+}
     
     // const sortedPrices=[...prices].sort((a, b) => a - b);
     // console.log(sortedPrices);
